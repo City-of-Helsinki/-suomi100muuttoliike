@@ -1,0 +1,103 @@
+.section--site-hero h1 {
+  font-size: 48px;
+}
+
+@media screen and (min-width: 768px) {
+  .section--site-hero h1 {
+    font-size: 60px;
+  }
+}
+
+#ranger {
+    color: white;
+}
+
+#sliideri {
+  margin-top: 2em;
+}
+
+#sliideri .slider {
+    width: 40em;
+}
+
+#animate {
+    text-align: right;
+}
+
+#animate button {
+    width: 10em;
+}
+
+#legend {
+    max-width: 15em;
+    background-color: white;
+    padding: 0.3em 0.5em;
+}
+
+#legend .color {
+    margin: 0.5em 0.3em;
+    display: block;
+    color: black;
+    font-size: 90%;
+    padding: 0.3em;
+}
+
+#legend .color .label {
+    width: 10em;
+    height: 2.5em;
+    padding: 2em;
+    margin: -1.5em;
+    background: white;
+    display: inline-block;
+    text-align: right;
+}
+
+#suomi100logo {
+    width: 150px;
+    height: auto;
+}
+
+.hero-pic-credit {
+    color: silver;
+    font-size: 80%;
+    text-align: right;
+    margin-bottom: 0.5em;
+}
+
+/* Timeline */
+
+.timeline-time {
+  text-align: right;
+  margin: 0;
+  color: #0072c6;
+  font-size: 24px;
+  line-height: 1.5em;
+}
+
+@media screen and (min-width: 768px) {
+  .timeline-time {
+    font-size: 36px;
+    line-height: 1em;
+  }
+}
+
+.timeline-content {
+  position: relative;
+  padding-left: 2em;
+  padding-bottom: 2em;
+  border-left: 2px #0072c6 solid;
+}
+
+.timeline-content::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: #0072c6;
+  border-radius: 0.75em;
+  position: absolute;
+  left: -0.55em;
+  top: 0.5em;
+}
+
+
