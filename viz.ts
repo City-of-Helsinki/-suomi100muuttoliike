@@ -50,13 +50,14 @@ function get_map_for_year(year) {
 
 async function loader() {
 
-    let maps = {};
+    let m = {};
+    let data = {};
 
-    map_names.forEach(async function (name) {
+    for (let i=0; i < map_names.length; i++) {
+        let name = map_names[i];
         let res = await fetch(name);
-        let map = await res.json();
-        maps[name] = map;
-    });
+        m[name] = await res.json();
+    }
 
     let r2 = await fetch('data/laanit.csv');
     let laanit_text = await r2.text();
@@ -84,11 +85,10 @@ async function loader() {
         }
     );
 
-    let data = {};
     Object.assign(data, laanit);
     Object.assign(data, maakunnat);
 
-    return {maps, data};
+    return {maps: m, data: data};
 
 }
 
@@ -163,10 +163,15 @@ function createMap(geojson, data) {
         });
 }
 
+let maps = {};
+let data = {};
+
 async function render(year) {
+
     let res = await loader();
     maps = res["maps"];
     data = res["data"];
+
     // Instantiate a slider
     let stuff = _.flatten([
         start_year,
