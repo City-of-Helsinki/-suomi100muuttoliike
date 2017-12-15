@@ -108,9 +108,9 @@ function createMap(geojson, data) {
                 return
             }
 
-            for (let [index, limit] of classifications.entries()) {
-                if (data[key] < limit) {
-                    classes[key] = index;
+            for (let i=0; i < classifications.length; i++) {
+                if (Number(data[key]) < classifications[i]) {
+                    classes[key] = i;
                     break;
                 }
             }
@@ -139,6 +139,7 @@ function createMap(geojson, data) {
         .append('path')
         .attr('d', path)
         .style("fill", d => {
+
             if (d.properties.nimi === 'HELSINKI') return suomenlinna; // Suomenlinna
             else if (classes[d.properties.nimi] !== null) {
             return colors[classes[d.properties.nimi]];
@@ -202,7 +203,6 @@ async function render(year) {
 
     d3.select('#animate button')
         .on('click', function () {
-            console.log("hrm?", this);
             if (animate) {
                 animate = false;
                 d3.select(this).text('Animaatio');
