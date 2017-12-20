@@ -1,4 +1,5 @@
 
+import 'object-assign';
 import Promise from 'promise-polyfill';
 
 // To add to window
